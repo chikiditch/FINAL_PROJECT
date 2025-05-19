@@ -1,0 +1,72 @@
+/* The Modal (background overlay) */
+.form-popup {
+  display: none;             /* Hidden by default */
+  position: fixed;           /* Stay in place */
+  z-index: 9;                /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;               /* Full width */
+  height: 100%;              /* Full height */
+  overflow: auto;            /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.7);  /* Black dappled with transparency */
+}
+
+/* Modal Content Box */
+.form-container {
+  background-color: white;
+  margin: 10% auto;          /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;              /* Adjust as needed */
+  border-radius: 5px;
+}
+
+/* Style the text inputs */
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Style the buttons inside the form */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.form-container .btn.cancel {
+  background-color: red;
+}
+
+/* The open/login button on the main page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 120px;
+}
+
+.open-button:hover {
+  opacity: 1;
+}

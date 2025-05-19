@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-color: rgb(5,5,5);
+    --header-color: #eeecec;
+    --primary-color: #52c33f;
+    --secondary-color: blue;
+    --toggle-color: #DDD;
+    --text-color: rgba(204, 204, 204, 1);
+    --text-color2: #52c33f;
+    --text-colorfx: rgba(178, 217, 66, 0.2);
+    --debug-container: red;
+    --debug-elements: green;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    --tran-07: all 0.7s ease;
+}
+
+
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+.image-gradient{
+    position: absolute;
+    height:auto;
+    width: 50%;
+    opacity: 10.5;
+    z-index: -1;
+}
+
+.layer-blur{
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 300px 15px var(--primary-color);
+    rotate: -45deg;
+    z-index: -1;
+}
+
+
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/*===========HEADER============*/
+
+
+.header-container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 2rem;
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+}
+
+
+
+
+header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    z-index: 999;
+}
+
+
+header .logo-text{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-text .text{
+    padding-left: 2rem;
+    
+}
+header .logo-text .text .Bandname{
+    font-size: 2rem;
+    font-weight: 250;
+    padding-left: 1.1rem;
+    line-height: 1.2;
+    letter-spacing: 0.2rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* adjust based on your design */
+  background: transparent; /* no background when at the top */
+  transition: opacity 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.navbar.hidden {
+    opacity: 1;
+  background: rgba(0, 0, 0, 0.5);;
+}
+
+.navbar:hover {
+  opacity: 1;  /* shows full opacity when the user hovers over the navbar */
+  background: rgba(0, 0, 0, 0.8); /* add a background for improved readability */
+}
+
+
+nav{
+    display:flex;
+    align-items: center;
+    gap: 3rem;
+
+}
+
+nav a{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: var(--tran-02);
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover{
+    color: var(--primary-color);
+    transform: var(--tran-03);
+}
+
+
+
+
+/*======CONTENTS======*/
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(90vh - 6rem);
+}
+
+main .main-container{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    gap: 20rem;
+}
+
+/*======HOME======*/
+
+
+main .main-container .home{
+    width: 100%;
+    height: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 16rem 0rem 16rem;
+}
+
+.home .band{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 5rem 3rem 10rem;
+    z-index: 200;
+}
+
+
+.home .band .name{
+    
+    max-width: 50rem;
+    padding-right: 3rem;
+}
+
+.home .band .name h1{
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+    color: var(--text-color);
+    transition: var(--tran-05);
+    text-decoration: none;
+}
+
+.home .band .name h1:hover{
+    
+    color: var(--text-color2);
+    text-shadow: 0 0 10px var(--text-colorfx);
+    transition: var(--tran-05);
+}
+
+.home .Bandimage{
+    max-width: 50rem;
+    border-radius: 3px;
+}
+
+.home .Bandimage img{
+    width:100%;
+    border-radius: 3px;
+}
+
+
+
+main .main-container .description{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 5rem 3rem 10rem;
+    z-index: 200;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+}
+
+
+    
+/*======MEDIAS======*/
+
+main .main-container .medias{
+    width: 100%;
+    height: auto;
+    background-color: var(--body-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin:10rem 16rem 1rem 16rem;
+    gap: 3rem;
+}
+
+.medias .video-container{
+    width:100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    overflow: hidden;
+    display: block;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.medias .video-container video{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    border: 5px solid transparent;
+    background: 
+    linear-gradient(to right, #52c33f, #338a2c, black, #338a2c, #52c33f) border-box,
+    linear-gradient(white, white) padding-box;
+    background-size: 200% 200%;
+    animation: animateBorder 5s linear infinite;
+    box-shadow: 0px 0px 20px 5px var(--text-colorfx);
+}
+@keyframes animateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.medias .video-container .controls{
+    gap: 2rem;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#seekbar {
+    width: 80%;
+    -webkit-appearance: none;
+    background:rgba(0,0,0,0);
+    height: 0.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--tran-05);
+}
+
+/* Webkit specific styling for the slider thumb */
+#seekbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.8rem;
+  height: 0.8rem;
+    background:rgba(0,0,0,0);
+
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--tran-05);
+
+}
+
+/*pause*/
+
+button #playPauseBtn{
+    margin: 0 10rem 1rem 10rem;
+}
+
+#playPauseBtn {
+    background: rgba(0,0 , 0, 0);
+    border: none;
+    color: white;
+    padding: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    line-height: 1rem;
+    box-sizing: border-box;
+    transition: var(--tran-05);
+}
+
+.controls #playPauseBtn:hover {
+    color:var(--text-color2);
+    transition: var(--tran-05);
+}
+
+#seekbar:hover {
+    transition: var(--tran-05);
+      background: #444;
+}
+#seekbar::-webkit-slider-thumb:hover {
+    transition: var(--tran-05);
+      background: var(--primary-color);
+}
+.video-container.paused #seekbar {
+    transition: var(--tran-05);
+      background: #444;
+}
+.video-container.paused #seekbar::-webkit-slider-thumb{
+    transition: var(--tran-05);
+  background: var(--primary-color);
+
+}
+
+
+
+.medias .media-links{
+    width:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem 0 10rem;
+}
