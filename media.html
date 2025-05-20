@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Band Media Page</title>
+  <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root{
+        --body-color: rgb(5,5,5);
+        --primary-color: #771717;
+        --secondary-color: blue;
+        --toggle-color: #DDD;
+        --text-color: rgba(204, 204, 204, 1);
+        --text-color2: #e01313;
+        --text-colorfx: #e01313;
+        --debug-container: red;
+        --debug-elements: green;
+
+        --tran-02: all 0.2s ease;
+        --tran-03: all 0.3s ease;
+        --tran-04: all 0.4s ease;
+        --tran-05: all 0.5s ease;
+        --tran-07: all 0.7s ease;
+    }
+    body {
+      background-color: var(--body-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .video-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .video-player {
+      flex-grow: 1;
+      min-width: 300px;
+      max-width: 100%;
+    }
+
+    .nav-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .podcast-section h2,
+    .memories-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .podcasts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .podcast {
+      background-color: var(--accent);
+      border-radius: 8px;
+      padding: 1rem;
+      max-width: 360px;
+      flex: 1;
+    }
+
+    .podcast iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .podcast-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .language-btn {
+      background-color: gray;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .memories {
+      display: flex;
+      gap: 10rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .back{
+        margin-top: 10rem;
+    }
+
+    .memory {
+      width: 250px;
+      height: 180px;
+      background-color: #222;
+      border: 2px solid var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .video-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .podcasts,
+      .memories {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      iframe {
+        height: 200px;
+      }
+    }
+
+
+        .rap-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 40px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rap-button .arrow {
+  background-color: var(--primary-color);
+  color: black;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.rap-button:hover {
+  background-color: var(--primary-color);
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #b30000aa;
+}
+
+.rap-button:hover .arrow {
+  background-color: black;
+  color: #b30000;
+}
+
+
+    .header-container{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    }
+
+    .content-container{
+        margin:5rem;
+    }
+
+
+
+    header{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 5rem;
+        z-index: 999;
+    }
+
+
+    header .logo-text img{
+        width: 100%;
+        max-width: 5.5rem;
+    }
+
+
+    header .logo-text{
+        display:flex;
+        margin:2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo-text .text{
+        padding-left: 2rem;
+        
+    }
+    header .logo-text .text .Bandname{
+        font-size: 2rem;
+        font-weight: 250;
+        padding-left: 1.1rem;
+        line-height: 1.2;
+        letter-spacing: 0.2rem;
+    }
+
+    .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: rgba(0, 0, 0, 1);
+    transition: opacity 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+    opacity: 1;
+    }
+        nav{
+        display:flex;
+        align-items: center;
+        gap: 3rem;
+
+    }
+
+    nav a{
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        transition: var(--tran-02);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    nav a:hover{
+        color: var(--primary-color);
+        transform: var(--tran-03);
+    }
+
+        .image-gradient{
+        position: absolute;
+        height:auto;
+        width: 50%;
+        opacity: 10.5;
+        z-index: -1;
+    }
+
+    .layer-blur{
+        height: 0;
+        width: 30rem;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 300px 15px var(--primary-color);
+        rotate: -45deg;
+        z-index: -1;
+    }
+
+  </style>
+</head>
+<body>
+    <img class="image-gradient"src="images/gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+    <div class="main">
+    <div class="header-container">
+                <header class="navbar">
+                    <div class="logo-text">
+                        <span class="logo">
+                            <img src="images/logo.png" alt="logo">
+                        </span>
+            
+                        <div class="text">
+                            <span class="Bandname">Sigbin Productions</span>
+                        </div>
+                    </div>
+                
+                    <nav>
+                        <a href="#">HOME</a>
+                        <a href="#">MEMBERS</a>
+                        <a href="#">CONTACTS</a>
+                    </nav>
+                </header>
+    </div>
+
+    <div class="content-container">
+        <div class="back">
+        <button class="rap-button">
+            <span class="arrow">‹</span>
+            <span class="text">Go Back Home</span>
+        </button>
+    </div>
+  <!-- Music Video Section -->
+  <section class="section video-section">
+    <button class="nav-button">prev</button>
+    <div class="video-player">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Band Music Video"
+              allowfullscreen></iframe>
+      <p style="text-align:center; margin-top: 0.5rem;">BAND MUSIC VIDEO</p>
+    </div>
+    <button class="nav-button">next</button>
+  </section>
+
+  <!-- Podcast Section -->
+  <section class="section podcast-section">
+    <h2>Podcasts we think you'll like!</h2>
+    <div class="podcasts">
+      <div class="podcast">
+        <span class="badge">NEW</span>
+        <iframe src="https://www.youtube.com/embed/5qap5aO4i9A"
+                title="Podcast 1"
+                allowfullscreen></iframe>
+        <div class="podcast-details">
+          <span>PODCAST 1</span>
+          <button class="language-btn">English</button>
+        </div>
+      </div>
+      <div class="podcast">
+        <span class="badge">NEW</span>
+        <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+                title="Podcast 2"
+                allowfullscreen></iframe>
+        <div class="podcast-details">
+          <span>PODCAST 2</span>
+          <button class="language-btn">English</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band Memories Section -->
+  <section class="section memories-section">
+    <h2>BAND MEMORIES!!</h2>
+    <div class="memories">
+      <div class="memory">BAND PICTURE</div>
+      <div class="memory">BAND PICTURE</div>
+      <div class="memory">BAND PICTURE</div>
+    </div>
+  </section>
+
+
+    </div>
+    
+</div>
+
+</body>
+</html>

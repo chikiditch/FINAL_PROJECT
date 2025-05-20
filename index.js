@@ -2,22 +2,10 @@ const video = document.getElementById('video');
 const seekbar = document.getElementById('seekbar');
 const playPauseButton = document.getElementById('playPauseBtn');
 const container = document.querySelector('.video-container');
-let lastScrollPos = window.pageYOffset;
-const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-  const currentScrollPos = window.pageYOffset;
-  
-  // If scrolled down (and past a threshold, e.g., 50px), hide the navbar.
-  if (currentScrollPos > lastScrollPos && currentScrollPos > 50) {
-    navbar.classList.add('hidden');
-  } else {
-    // Scrolling up, or at the very top—show the navbar.
-    navbar.classList.remove('hidden');
-  }
-  
-  lastScrollPos = currentScrollPos;
-});
+
+
+
 
 
 // Update the seekbar maximum value once metadata is loaded
