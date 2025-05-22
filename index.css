@@ -11,7 +11,7 @@
     --secondary-color: blue;
     --toggle-color: #DDD;
     --text-color: rgba(204, 204, 204, 1);
-    --text-color2: #e01313;
+    --text-color2: #B22222;
     --text-colorfx: #e01313;
     --debug-container: red;
     --debug-elements: green;
@@ -149,7 +149,7 @@ nav a{
 }
 
 nav a:hover{
-    color: var(--primary-color);
+    color: var(--text-color2);
     transform: var(--tran-03);
 }
 
@@ -191,6 +191,8 @@ main .main-container .home{
     margin: 5rem 16rem 0rem 16rem;
 }
 
+
+
 .home .band{
     width: 100%;
     display: flex;
@@ -203,19 +205,23 @@ main .main-container .home{
 
 
 .home .band .name{
-    
     max-width: 50rem;
     padding-right: 3rem;
+    margin-left: 10rem;
 }
 
 .home .band .name h1{
-    font-size: 4rem;
-    font-weight: 600;
+    font-family: "Aguafina Script"; 
+    font-size: 5rem; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 900; 
     letter-spacing: 0.1rem;
     line-height: 1.2;
     color: var(--text-color);
     transition: var(--tran-05);
     text-decoration: none;
+    cursor: none;
 }
 
 .home .band .name h1:hover{
@@ -261,8 +267,8 @@ main .main-container .medias{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin:10rem 16rem 1rem 16rem;
-    gap: 3rem;
+    margin:3rem 10rem 3rem 10rem;
+    gap: 2rem;
 }
 
 .medias .video-container{
@@ -375,7 +381,7 @@ button #playPauseBtn{
 }
 .video-container.paused #seekbar::-webkit-slider-thumb{
     transition: var(--tran-05);
-    background: var(--primary-color);
+    background: var(--text-color2);
 
 }
 
@@ -389,8 +395,7 @@ button #playPauseBtn{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10rem 0 10rem;
-    
+    padding: 1rem 10rem;
 }
 
 .medias .media-links #profiles{
@@ -413,32 +418,42 @@ button #playPauseBtn{
 }
 
 
-.medias .media-links a{
-   padding: 10px 20px;
+.medias .media-links .text{
+    padding: 0.5rem 0.3rem;
+    font-size: 1.6rem;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1rem;
+    letter-spacing: 0.04rem;
+    
+}
+.medias .media-links .text:hover{
+    padding: 0.5rem 0.3rem;
     font-size: 16px;
     border: none;
-    background-color: #007bff;
-    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-
-
-
-
-
+.rap-button i{
+    font-size:1.5rem ;
+}
 
 .rap-button {
+    
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0.3rem 1rem;
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--text-color2);
   background-color: transparent;
-  border: 2px solid var(--primary-color);
-  border-radius: 40px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
   cursor: pointer;
   letter-spacing: 0.3px;
   transition: all 0.25s ease;
@@ -446,24 +461,11 @@ button #playPauseBtn{
   overflow: hidden;
 }
 
-.rap-button .arrow {
-  background-color: var(--primary-color);
-  color: black;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-
 .rap-button:hover {
   background-color: var(--primary-color);
-  color: black;
+  border: none;
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 0 20px #b30000aa;
 }
 
-.rap-button:hover .arrow {
-  background-color: black;
-  color: #b30000;
-}

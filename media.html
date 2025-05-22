@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Band Media Page</title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
      *{
         margin: 0;
@@ -17,7 +19,7 @@
         --secondary-color: blue;
         --toggle-color: #DDD;
         --text-color: rgba(204, 204, 204, 1);
-        --text-color2: #e01313;
+        --text-color2: #B22222;
         --text-colorfx: #e01313;
         --debug-container: red;
         --debug-elements: green;
@@ -36,11 +38,18 @@
       padding: 0;
     }
 
+    .main {
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     .section {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
+      
+      max-width: 90rem;
+      margin: 0 auto;
+      margin-bottom: 10rem;
     }
 
     .video-section {
@@ -49,13 +58,37 @@
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
+      min-height: 50rem;
     }
 
-    .video-player {
-      flex-grow: 1;
-      min-width: 300px;
-      max-width: 100%;
+
+    .video-player p{
+      text-align: center;
+      font-weight: 50;
+      font-size: 1.5rem;
+      padding: 1rem;
+      line-height: 1rem;
+      letter-spacing: 0.02rem;
     }
+
+
+
+.video-player {
+  position: relative;
+  width: 100%;          /* Container fills the width of its parent */
+  height: 40rem;
+  overflow: hidden;
+}
+
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 
     .nav-button {
       background-color: var(--primary-color);
@@ -66,37 +99,32 @@
       border-radius: 20px;
       font-size: 1rem;
     }
-
-    iframe {
-      width: 100%;
-      height: 360px;
-      border: none;
-      border-radius: 8px;
-    }
-
     .podcast-section h2,
     .memories-section h2 {
       margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
 
     .podcasts {
       display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+      gap: 40rem;
+      align-items: center;
+      max-width: 100%;
     }
 
     .podcast {
+      width: 100%;
       background-color: var(--accent);
       border-radius: 8px;
       padding: 1rem;
-      max-width: 360px;
-      flex: 1;
+      max-width: 15rem;
+      
     }
 
     .podcast iframe {
-      width: 100%;
-      height: 200px;
+      width: 30rem;
+      height: 20rem;
     }
 
     .badge {
@@ -124,28 +152,7 @@
       border-radius: 5px;
     }
 
-    .memories {
-      display: flex;
-      gap: 10rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .back{
-        margin-top: 10rem;
-    }
 
-    .memory {
-      width: 250px;
-      height: 180px;
-      background-color: #222;
-      border: 2px solid var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-color);
-      border-radius: 8px;
-      font-weight: bold;
-    }
 
     @media (max-width: 768px) {
       .video-section {
@@ -164,45 +171,44 @@
       }
     }
 
+    .rap-button .text{
+      color: var(--toggle-color);
+    }
+     .rap-button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: var(--text-color2);
+      background-color: transparent;
+      border: 1px solid var(--primary-color);
+      border-radius: 40px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .rap-button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  color: var(--text-color);
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  border-radius: 40px;
-  cursor: pointer;
-  letter-spacing: 0.3px;
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
+    .rap-button:hover {
+      background-color: var(--primary-color);
+      color: var(--header-color);
+      border: none;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px #b30000aa;
+    }
 
-.rap-button .arrow {
-  background-color: var(--primary-color);
-  color: black;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
+    .rap-button:hover .text {
+      color: var(--header-color);
+    }
 
-.rap-button:hover {
-  background-color: var(--primary-color);
-  color: black;
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px #b30000aa;
-}
-
-.rap-button:hover .arrow {
-  background-color: black;
-  color: #b30000;
-}
+    .back{
+        margin-left:5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        min-height: 4rem;
+    }
 
 
     .header-container{
@@ -306,6 +312,100 @@
         z-index: -1;
     }
 
+
+
+    .memories {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding: 0 2rem;
+    }
+     .memory {
+      width: 100%;
+      max-width: 20rem;
+      height: auto;
+      background-color: #222;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 10rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .memories img{
+      width: 100%;
+      max-width: 30rem;
+    }
+    .memory:hover {
+      transform: scale(1.05);
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    /* Modal Content (The Zoomed Image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      transition: transform 0.3s ease;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: var(--text-color2);
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+ 
+
+/* Zoom control buttons container */
+.zoom-controls {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  z-index: 1001;
+  left: 45%;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+/* Updated zoom button styling */
+
+
+/* Optional: adjust spacing for individual buttons */
+#zoomIn, #zoomOut {
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+  padding:1rem;
+  background: none;
+  border: none;
+  
+}
+
   </style>
 </head>
 <body>
@@ -333,46 +433,53 @@
     </div>
 
     <div class="content-container">
-        <div class="back">
-        <button onclick="location.href='index.html'" class="rap-button" >
-            <span class="arrow">‹</span>
-            <span class="text">Go Back Home</span>
-        </button>
-    </div>
+          <div class="back">
+            <button onclick="location.href='index.html'" class="rap-button">
+              <span class="fa-solid fa-house"></span>
+              <span class="text">Home</span>
+            </button>
+          </div>
   <!-- Music Video Section -->
   <section class="section video-section">
-    <button class="nav-button">prev</button>
+    
     <div class="video-player">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Band Music Video"
-              allowfullscreen></iframe>
-      <p style="text-align:center; margin-top: 0.5rem;">BAND MUSIC VIDEO</p>
+      <iframe src="https://www.youtube.com/embed/_eo5iY0BkTg?si=xNQ-sCG6zP-Re6pc" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+      <p>BAND MUSIC VIDEO</p>
     </div>
-    <button class="nav-button">next</button>
-  </section>
 
+  </section>
   <!-- Podcast Section -->
   <section class="section podcast-section">
     <h2>Also check our podcasts!</h2>
     <div class="podcasts">
       <div class="podcast">
         <span class="badge">NEW</span>
-        <iframe src="https://www.youtube.com/embed/5qap5aO4i9A"
-                title="Podcast 1"
-                allowfullscreen></iframe>
-        <div class="podcast-details">
-          <span>PODCAST 1</span>
-          <button class="language-btn">English</button>
+        <iframe 
+          src="https://www.youtube.com/embed/aqz-KE-bpKQ" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+
+        <div>
+        <span>PODCAST 1</span>
         </div>
       </div>
+
+
+
       <div class="podcast">
         <span class="badge">NEW</span>
-        <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+        <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ"
                 title="Podcast 2"
                 allowfullscreen></iframe>
         <div class="podcast-details">
           <span>PODCAST 2</span>
-          <button class="language-btn">English</button>
+          
         </div>
       </div>
     </div>
@@ -380,18 +487,76 @@
 
   <!-- Band Memories Section -->
   <section class="section memories-section">
-    <h2>BAND MEMORIES!!</h2>
+    <h2>BAND MEMORIES!!!</h2>
     <div class="memories">
-      <div class="memory">BAND PICTURE</div>
-      <div class="memory">BAND PICTURE</div>
-      <div class="memory">BAND PICTURE</div>
+      <img class="memory" src="images/bandmem.png" alt="Memory Image 1">
+      <img class="memory" src="images/micowo.png" alt="Memory Image 2">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Close button -->
+        <span id="closeBtn" class="close">&times;</span>
+        <!-- The zoomed image -->
+        <img class="modal-content" id="modalImage">
+        <!-- Zoom controls -->
+        <div id="zoom-controls" class="zoom-controls">
+          <button id="zoomIn" class="fa-solid fa-magnifying-glass-plus"></button>
+          <button id="zoomOut" class="fa-solid fa-magnifying-glass-minus"></button>
+        </div>
+      </div>
+      
     </div>
   </section>
-
 
     </div>
     
 </div>
+
+ <script>
+    // Get modal elements
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImage");
+    const zoomControls = document.getElementById("zoom-controls");
+    const closeBtn = document.getElementById("closeBtn");
+    let currentScale = 1;
+
+    // Handle clicking on an image with class "memory"
+    document.querySelectorAll('.memory').forEach(image => {
+      image.addEventListener('click', function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        currentScale = 1;
+        modalImg.style.transform = "scale(" + currentScale + ")";
+        zoomControls.style.display = "block";
+      });
+    });
+
+    // Zoom in/out button functionality
+    document.getElementById("zoomIn").addEventListener('click', function(){
+      currentScale += 0.1;
+      modalImg.style.transform = "scale(" + currentScale + ")";
+    });
+
+    document.getElementById("zoomOut").addEventListener('click', function(){
+      // Prevent zooming out too far
+      if (currentScale > 0.2) {
+        currentScale -= 0.1;
+        modalImg.style.transform = "scale(" + currentScale + ")";
+      }
+    });
+
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener('click', function(){
+      modal.style.display = "none";
+    });
+
+    // Also close if clicking outside the modal content
+    modal.addEventListener('click', function(e){
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>
