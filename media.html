@@ -47,7 +47,7 @@
 
     .section {
       
-      max-width: 90rem;
+      max-width: 100rem;
       margin: 0 auto;
       margin-bottom: 10rem;
     }
@@ -345,7 +345,7 @@
     }
 
     /* The Modal (background) */
-    .modal {
+    .memories .modal {
       display: none; /* Hidden by default */
       position: fixed;
       z-index: 999;
@@ -358,12 +358,18 @@
     }
 
     /* Modal Content (The Zoomed Image) */
-    .modal-content {
+    .memories .modal .modal-content {
       margin: auto;
       display: block;
       max-width: 90%;
-      max-height: 80%;
+      max-height: 90%;
+      width: auto; /* Let the image size adjust automatically */
       transition: transform 0.3s ease;
+    }
+    .memories .modal .modal-content img{
+        width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     /* Close button */
@@ -490,7 +496,7 @@
     <h2>BAND MEMORIES!!!</h2>
     <div class="memories">
       <img class="memory" src="images/bandmem.png" alt="Memory Image 1">
-      <img class="memory" src="images/micowo.png" alt="Memory Image 2">
+      <img class="memory" src="images/sesh.jfif" alt="Memory Image 2">
 
       <!-- The Modal -->
       <div id="myModal" class="modal">
