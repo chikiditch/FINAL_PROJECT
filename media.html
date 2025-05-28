@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sigbin Productions - Media</title>
+  <meta http-equiv="Content-Security-Policy">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -116,7 +117,7 @@
       transform: translateY(-5px);
     }
 
-    .video-player iframe {
+    .video-player video {
       position: absolute;
       top: 0;
       left: 0;
@@ -325,7 +326,7 @@
 
     .back {
       margin: 6rem 0 0 2rem;
-      min-height: 4rem;
+      
     }
 
     .header-container {
@@ -350,9 +351,10 @@
       padding: 3rem 5rem;
       z-index: 999;
     }
-/*======================================================================================================================================================================*/
+
     header .logo-text img {
       width: 100%;
+      min-width: 8rem;
       max-width: 10rem;
       transition: var(--tran-03);
       filter: drop-shadow(0 0 5px rgba(119, 23, 23, 0.5));
@@ -921,7 +923,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 840px) {
       header {
         padding: 1rem;
       }
@@ -929,13 +931,19 @@
       header .logo-text {
         margin: 1rem 0;
       }
+      header .logo-text .text .Bandname{
+        font-size: 2rem;
+      }
       
       .section-title {
         font-size: 2rem;
       }
       
       .back {
-        margin: 3rem 0 0 1rem;
+        margin: 5rem 0 0 1rem;
+      }
+      .rap-button {
+        font-size: 1.3rem;
       }
       
       .audio-tracks {
@@ -1006,6 +1014,10 @@
       .logo-text .Bandname {
         font-size: 1.5rem;
       }
+
+      .rap-button {
+        font-size: 1.1rem;
+      }
       
       .zoom-controls {
         bottom: 20px;
@@ -1040,16 +1052,21 @@
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 470px) {
       
       header .logo-text .text {
         padding-left: 0;
         margin-top: 0.5rem;
+        
       }
-      
-      .logo-text .Bandname {
-        font-size: 1.3rem;
+
+      header .logo-text .text .Bandname {
+        font-size: 1.5rem;
+        padding: 0.4rem;
       }
+    .header-container .navbar .logo-text .logo img{
+            max-width: 1rem;
+        }
       
       .track-cover {
         height: 180px;
@@ -1080,9 +1097,9 @@
         </div>
         
         <nav id="main-nav">
-          <a href="index.html">HOME</a>
+          <a href="index.html ">HOME</a>
           <a href="members.html">MEMBERS</a>
-          <a href="index.html">CONTACTS</a>
+          <a href="index.html">LOCATION</a>
         </nav>
       </header>
     </div>
@@ -1099,12 +1116,8 @@
       <section class="section video-section">
         <h2 class="section-title">OUR MUSIC VIDEO</h2>
         <div class="video-player pulse">
-          <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ?si=YFP9Ky0SSDHLo8Ql" 
-            title="Sigbin Productions Music Video" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
-            allowfullscreen>
-          </iframe>
+          
+          <video src="images/Hubad mo drip.mp4" controls></video>
         </div>
         <p class="video-caption">Check out our latest music video!</p>
       </section>
@@ -1132,7 +1145,7 @@
           
           <!-- Track 2 -->
           <div class="audio-track">
-            <img src="images/moe.png" alt="Track Cover" class="track-cover">
+            <img src="images/bandpic.png" alt="Track Cover" class="track-cover">
             <div class="track-info">
               <span class="badge">OUR FAVORITE</span>
               <h3 class="track-title">Keblarson</h3>
@@ -1149,7 +1162,7 @@
           
           <!-- Track 3 -->
           <div class="audio-track">
-            <img src="images/album-cover3.jpg" alt="Track Cover" class="track-cover">
+            <img src="images/logo.png" alt="Track Cover" class="track-cover">
             <div class="track-info">
               <span class="badge">UPCOMING</span>
               <h3 class="track-title">Blood Moon Rising</h3>
@@ -1177,8 +1190,8 @@
                 <img src="images/bandmem.png" alt="Band Memory 1">
               </div>
               <div class="card-back">
-                <h3 class="card-title">Studio Session</h3>
-                <p class="card-date">June 2023</p>
+                <h3 class="card-title">Members Pic</h3>
+                <p class="card-date">May 20 2025</p>
               </div>
             </div>
           </div>
@@ -1187,11 +1200,11 @@
           <div class="memory-card">
             <div class="card-inner">
               <div class="card-front">
-                <img src="images/bandpic.png" alt="Band Memory 2">
+                <img src="images/bandmem1.png" alt="Band Memory 2">
               </div>
               <div class="card-back">
-                <h3 class="card-title">Live Performance</h3>
-                <p class="card-date">August 2023</p>
+                <h3 class="card-title">Studio Planning</h3>
+                <p class="card-date">April 3 2025</p>
               </div>
             </div>
           </div>
@@ -1200,11 +1213,11 @@
           <div class="memory-card">
             <div class="card-inner">
               <div class="card-front">
-                <img src="images/micowor.png" alt="Band Memory 3">
+                <img src="images/bandmem2.png" alt="Band Memory 3">
               </div>
               <div class="card-back">
                 <h3 class="card-title">Recording Day</h3>
-                <p class="card-date">March 2023</p>
+                <p class="card-date">April 16 2025</p>
               </div>
             </div>
           </div>
@@ -1213,11 +1226,11 @@
           <div class="memory-card">
             <div class="card-inner">
               <div class="card-front">
-                <img src="roblox4.png" alt="Band Memory 4">
+                <img src="images/doc1.png" alt="Band Memory 4">
               </div>
               <div class="card-back">
-                <h3 class="card-title">Backstage</h3>
-                <p class="card-date">October 2023</p>
+                <h3 class="card-title">Studio Session</h3>
+                <p class="card-date">May 05 2025</p>
               </div>
             </div>
           </div>
@@ -1226,11 +1239,11 @@
           <div class="memory-card">
             <div class="card-inner">
               <div class="card-front">
-                <img src="roblox5.png" alt="Band Memory 5">
+                <img src="images/doc.jpg" alt="Band Memory 5">
               </div>
               <div class="card-back">
-                <h3 class="card-title">Rehearsal</h3>
-                <p class="card-date">January 2023</p>
+                <h3 class="card-title">Project Day</h3>
+                <p class="card-date">May 26 2025</p>
               </div>
             </div>
           </div>
@@ -1239,11 +1252,11 @@
           <div class="memory-card">
             <div class="card-inner">
               <div class="card-front">
-                <img src="roblox6.png" alt="Band Memory 6">
+                <img src="images/doc2.jpg" alt="Band Memory 6">
               </div>
               <div class="card-back">
-                <h3 class="card-title">Album Release</h3>
-                <p class="card-date">December 2023</p>
+                <h3 class="card-title">Project Day</h3>
+                <p class="card-date">May 27 2025</p>
               </div>
             </div>
           </div>
@@ -1278,7 +1291,7 @@
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
-      <p class="copyright">© 2023 Sigbin Productions. All Rights Reserved.</p>
+      <p class="copyright">© 2025 Sigbin Productions. All Rights Reserved.</p>
     </footer>
   </div>
   

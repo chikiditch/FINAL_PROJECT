@@ -80,6 +80,11 @@
       currentIndex = (currentIndex - 1 + members.length) % members.length;
       updateMember();
     }
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
 
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
     window.onload = updateMember;

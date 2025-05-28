@@ -1,4 +1,4 @@
-*{
+            *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -97,12 +97,12 @@ header{
     align-items: center;
     padding: 3rem 5rem;
     z-index: 999;
-    margin-bottom: 10rem;
 }
 
 
 header .logo-text img{
     width: 100%;
+    min-width: 50px;
     max-width: 10rem;
     transition: var(--tran-03);
     filter: drop-shadow(0 0 5px rgba(119, 23, 23, 0.5));
@@ -202,7 +202,7 @@ main .main-container{
     justify-content: space-between;
     z-index: 100;
     gap: 12rem;
-    border: 1.5px rgba(204,204,204, 0.15) solid;
+    
     
 }
 
@@ -232,19 +232,14 @@ main .main-container .home{
     justify-content: space-between;
     padding: 0 20rem;
     z-index: 200;
-    gap:0%;
+    gap:20%;
 }
 
 
 
-.home .band .name{
-    width: 100%;
-    max-width: 70rem;
-}
 
 
 .home .band .name h1{
-    
     font-family: "Aguafina Script"; 
     font-style: normal; 
     font-variant: normal; 
@@ -255,7 +250,7 @@ main .main-container .home{
     transition: var(--tran-05);
     text-decoration: none;
     cursor: none;
-    font-size: 8rem;
+    font-size: clamp(4rem, 5vw, 8rem);
 }
 
 .home .band .name h1:hover{
@@ -266,14 +261,13 @@ main .main-container .home{
 
 .home .Bandimage{ 
     width:100%;
-    max-width: 70rem;
+    max-width: 100rem;
     margin: 0 auto;
-    min-width: 300px;
     position: relative;
     align-items: center;
     padding: 2rem;
     border-radius: 5px;
-   
+    display: block;
 }
 
 .home .Bandimage img{
@@ -564,8 +558,8 @@ main .main-container .contacts{
 
 .image-container #loc1-icon{
     position: absolute;
-    top: 45%;
-    left: 60%;
+    top: 43%;
+    left: 68%;
     transform: translate(-50%, -50%);
     text-decoration: none;
 }
@@ -578,6 +572,18 @@ main .main-container .contacts{
     text-decoration: none;
 }
 
+.image-container .fa-location-dot {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    color: var(--text-color2);
+}
+
+.image-container .fa-location-dot.active {
+    opacity: 1;
+    color: var(--header-color);
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgba(179, 34, 34, 1);
+}
 
 
 
@@ -599,6 +605,7 @@ main .main-container .contacts{
     align-items: flex-start;
 }
 .contacts .details-container #loc2{
+    margin-left: 1rem;
     text-decoration: none;
     font-size: 4rem;
     color: var(--primary-color);
@@ -626,13 +633,15 @@ main .main-container .contacts{
 
 .contacts .details-container .info #location-name{
     font-size: 4rem;
-    font-weight: 500;
+    font-weight: 350;
+    letter-spacing: 0.2rem;
+    line-height: 2 rem;
 }
 
 .contacts .details-container .info #location-deets{
-    font-size: 1.8rem;
-    font-weight: 200 ;
-    line-height: 1.4;
+    font-size: 1.7rem;
+    font-weight: 150 ;
+    line-height: 1.5;
 }
 
 .contacts .details-container .info .loc-link{
@@ -651,6 +660,7 @@ main .main-container .contacts{
 }
 .contacts .details-container .info .loc-link p{
     font-size: 1.2rem;
+    font-weight: 50;
 }
 
 
@@ -726,6 +736,17 @@ footer::before {
     color: #777;
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: var(--tran-03);
+}
+
+.menu-toggle:hover {
+      color: var(--primary-color);
+}
 
 
 
@@ -733,11 +754,295 @@ footer::before {
 
 
 
+/*========================================RESPONSIVENESS===============================================*/
 
 
+    @media (max-width: 1200px) {
+        main .main-container .home{
+            margin: 15rem 8rem 0 8rem;
+        }
+        main .main-container .description {
+            margin: 5rem 4rem 0 4rem;
+            padding: 0 4rem;
+            font-size: 1.6rem;
+        }
+        
+        .home .band {
+            padding: 0 10rem;
+        }
 
+        .contacts {
+            padding: 0 5rem;
+        }
+                .contacts .details-container .info{
+            max-width: 85%;
+        }
+        .contacts .details-container #loc2{
+            margin-left: 4rem;
+            font-size: 3.3rem;
+        }
+        .contacts .details-container .info .locimage-container{
+            display: none;
+        }
+    }
 
+    @media (max-width: 992px) {
+        html{
+            font-size: 60%;
+        }
+        header {
+            padding: 3rem 2rem;
+        }
+        
+        .home .band {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5rem;
+            gap: 5rem;
+        }
 
+        
+        main .main-container .home{
+            margin: 15rem 5rem 0 5rem;
+        }
+        main .main-container .description {
+            margin: 1rem 5rem 0 5rem;
+            padding: 0 5rem;
+            font-size: 1.3rem;
+        }
+        
+        .contacts {
+            flex-direction: column;
+            gap: 5rem;
+            padding: 0 3rem;
+            margin: 3rem 5rem;
+        }
+        
+        .contacts .details-container {
+            width: 100%;
+        }
+        
+        .medias {
+            margin: 3rem 5rem;
+        }
 
+        .contacts .details-container #loc2{
+            margin-left: 1rem;
+            font-size: 3rem;
+        }
+    }
+    @media (max-width: 840px) {
+        .menu-toggle {
+            display: block;
+        }
+        
+        nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            transform: translateY(-150%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            backdrop-filter: blur(5px);
+        }
+        
+        nav.active {
+            transform: translateY(0);
+        }
+        
+        nav a {
+            padding: 1.5rem;
+            font-size: 1.6rem;
+        }
+        
+        .header-container {
+            margin-top: 0;
+        }
+    }
 
+    @media (max-width: 768px) {
+        html{
+            font-size: 60%;
+        }
+        header .logo-text {
+            margin: 1rem;
+        }
+        
+        header .logo-text .text .Bandname {
+            font-size: 2rem;
+        }
+        
+        main .main-container .home{
+            margin: 15rem 3rem 0 3rem;
+        }
+        main .main-container .description {
+            margin: 5rem 3rem 0 3rem;
+            padding: 0 2rem;
+        }
+        
+        .home .band {
+            padding: 0;
+        }
+        
+        .home .Bandimage {
+            min-width: 300px;
+        }
+        
+        .medias {
+            margin: 3rem 2rem;
+        }
+        
+        .medias .media-links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contacts {
+            margin: 3rem 2rem;
+            padding: 0 1rem;
+        }
+        
+        .contacts .details-container .info #location-name {
+            font-size: 3rem;
+        }
+        .contacts .details-container #loc2{
+            font-size: 1.8rem;
+        }
+        .contacts .details-container #location-link{
+            font-size: 1.8rem;
+        }
+        .contacts .details-container .info #location-deets{
+            font-size: 1.3rem;
+        }
+
+            nav {
+        top: 70px; /* Adjust for smaller header */
+        padding: 1.2rem 0;
+    }
+    
+        nav a {
+        padding: 1.6rem;
+        font-size: 1.7rem;
+    }
+    
+    .menu-toggle {
+        font-size: 2.5rem;
+    }
+    }
+
+    @media (max-width: 576px) {
+        html{
+            font-size: 51%;
+        }
+        header {
+            padding: 2rem 1rem;
+        }
+        
+        header .logo-text img {
+            max-width: 7rem;
+        }
+        
+        .navbar {
+            padding: 3rem 1rem;
+        }
+        
+        main .main-container .home{
+            margin: 12rem 1rem 0 1rem;
+        }
+        main .main-container .description {
+            margin: 3rem 1rem 0 1rem;
+            padding: 0;
+            font-size: 0.8rem;
+        }
+        
+        .home .name h1 {
+            font-size: 3.5rem;
+        }
+        .home .band .Bandimage img{
+            max
+        }
+  
+        
+        .medias {
+            margin: 3rem 1rem;
+        }
+        
+        .contacts {
+            margin: 1rem 0.2rem;
+        }
+        
+        .contacts .details-container .info #location-name {
+            font-size: 2.5rem;
+        }
+        nav {
+        top: 65px;
+        padding: 1rem 0;
+    }
+    
+    nav a {
+        padding: 1.4rem;
+        font-size: 1.6rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    .menu-toggle {
+        font-size: 2.3rem;
+        padding: 0.8rem;
+    }
+}
+
+    
+
+    @media (max-width: 480px) {
+        .header-container .navbar .logo-text .logo img{
+            max-width: 1rem;
+        }
+        .home .name h1 {
+            font-size: 3rem;
+        }
+        
+        main .main-container .description{
+            font-size: 1rem;
+        }
+
+        .description {
+            font-size: 1.4rem;
+        }
+        
+        .rap-button {
+            padding: 0.6rem 1rem;
+            font-size: 1.2rem;
+        }
+        .main-container .contacts .image-container{
+            display: none;
+        }
+
+        .contacts .details-container .info #location-name {
+            font-size: 2rem;
+        }
+        .contacts .details-container .info #location-name {
+            font-size: 2rem;
+        }
+
+        nav {
+        top: 60px;
+    }
+    
+    nav a {
+        padding: 1.2rem;
+        font-size: 1.5rem;
+    }
+    
+    .menu-toggle {
+        font-size: 2rem;
+        padding: 0.6rem;
+    }
+    }
 

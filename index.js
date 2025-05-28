@@ -2,9 +2,60 @@ const video = document.getElementById('video');
 const seekbar = document.getElementById('seekbar');
 const playPauseButton = document.getElementById('playPauseBtn');
 const container = document.querySelector('.video-container');
+const loc1Icon = document.getElementById('loc1-icon');
+const loc2Icon = document.getElementById('loc2-icon');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+const loc = [
+  {
+    name: "CRIB",
+    details:"Our songs are crafted in the heart of our crib, where raw energy meets creativity. You can grab yourself some merches for swag drip.",
+    picture:"images/MERCH.png",
+    link:"https://www.google.com/maps/place/Bahay+ni+Haring+Mico+Malakas/@14.6161918,120.9833572,17.5z/data=!4m6!3m5!1s0x3397b53208fc9ff3:0x43e4f529ea82eaa8!8m2!3d14.6161942!4d120.9849957!16s%2Fg%2F11y1t92yn_?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  {
+    name: "SM City Manila",
+    details:"Visit our booth at SM Manila! Purchase your tickets for the latest events hosted by Sigbin Productions featuring RAWDAWGS.",
+    picture:"images/SMCITYMANILA.jpg",
+    link:"https://www.google.com/maps/place/SM+City+Manila/@14.590256,120.9811942,17z/data=!3m1!4b1!4m6!3m5!1s0x3397cb209479aa11:0x872db4487b1bb367!8m2!3d14.5902508!4d120.9837691!16s%2Fg%2F11g0j06dbq?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
+  }
+
+
+];
+
+
+let currentIndex = 0;
+
+function updateLoc(){
+  const locs = loc[currentIndex];
+  document.getElementById("loc-image").src = locs.picture;
+  document.getElementById("loc-image").alt = `${locs.name} picture`;
+  document.getElementById("location-name").textContent = locs.name;
+  document.getElementById("location-deets").textContent = locs.details;
+  document.getElementById("location-link").href = locs.link;
+
+
+  loc1Icon.classList.toggle('active', currentIndex === 0);
+  loc2Icon.classList.toggle('active', currentIndex === 1);
+}
+
+function nextLoc(e) {
+  e.preventDefault();
+  currentIndex = (currentIndex + 1) % loc.length;
+  updateLoc(); 
+}
 
 
 
+window.onload = () =>{
+  loc1Icon.classList.add('active');
+
+  updateLoc();
+}
 
 
 
@@ -45,3 +96,9 @@ video.addEventListener('pause', () => {
 video.addEventListener('play', () => {
   container.classList.remove('paused');
 });
+
+
+
+
+
+

@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="index.css">
         <title>Index</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <img class="image-gradient"src="images/gradient.png" alt="gradient">
@@ -26,7 +26,10 @@
                             <span class="Bandname">Sigbin Productions</span>
                         </div>
                     </div>
-                
+                    
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
                     <nav>
                         <a href="#home">HOME</a>
                         <a href="media.html">MEDIA</a>
@@ -63,7 +66,7 @@
                     <div class="medias">
                         <div class="video-container">
                             <video id="video" preload="metadata">
-                                <source src="images/videoplayback (1).mp4" type="video/mp4">
+                                <source src="images/Mala Gar.mp4" type="video/mp4">
                             </video>
                             <div class="controls">
                                 <button id="playPauseBtn">
@@ -98,7 +101,7 @@
                     <div class="contacts" id="contacts">
                         <div class="image-container">
                             <img src="images/map.png" alt="" class="map-image">
-                            <i href="" id="loc1-icon" class="fa-solid fa-location-dot"></i>
+                            <i href="" id="loc1-icon" class="fa-solid fa-location-dot active"></i>
                             <i href="" id="loc2-icon" class="fa-solid fa-location-dot"></i>
                                 
                             
@@ -106,15 +109,15 @@
                         </div>
                         <div class="details-container">                            
                             <div class="info">
-                                <div class="locimage-container"><img src="images/verticol.png" alt="loc-image" class="loc-image"></div>
+                                <div class="locimage-container"><img src="" alt="loc-image" id="loc-image"></div>
                                 
-                                <h1 id="location-name">Lorem ipsum dolor sit amet</h1>
-                                <p id="location-deets">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h1 id="location-name">Location Name</h1>
+                                <p id="location-deets">Location Details</p>
                                 <div class="loc-link"><a href="#" id="location-link" target="_blank" title="Location" class="fa-solid fa-location-crosshairs"></a><p>Click to see Location</p></div>
                                 
                             </div>
                             
-                            <a href="" class="fa-solid fa-arrow-right" id="loc2"  onclick="prevLoc()"></a>
+                            <a href="#" class="fa-solid fa-arrow-right" id="loc2"  onclick="nextLoc(event)"></a>
                         </div>
                     </div>
                 </div>
@@ -132,12 +135,118 @@
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
-                <p class="copyright">© 2023 Sigbin Productions. All Rights Reserved.</p>
+                <p class="copyright">© 2025 Sigbin Productions. All Rights Reserved.</p>
             </footer>
         
         </div>
     
-    <script src="index.js"></script>
+    <script>
+        const video = document.getElementById('video');
+const seekbar = document.getElementById('seekbar');
+const playPauseButton = document.getElementById('playPauseBtn');
+const container = document.querySelector('.video-container');
+const loc1Icon = document.getElementById('loc1-icon');
+const loc2Icon = document.getElementById('loc2-icon');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+const loc = [
+  {
+    name: "CRIB",
+    details:"Our songs are crafted in the heart of our crib, where raw energy meets creativity. You can grab yourself some merches for swag drip.",
+    picture:"images/MERCH.png",
+    link:"https://www.google.com/maps/place/Bahay+ni+Haring+Mico+Malakas/@14.6161918,120.9833572,17.5z/data=!4m6!3m5!1s0x3397b53208fc9ff3:0x43e4f529ea82eaa8!8m2!3d14.6161942!4d120.9849957!16s%2Fg%2F11y1t92yn_?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  {
+    name: "SM City Manila",
+    details:"Visit our booth at SM Manila! Purchase your tickets for the latest events hosted by Sigbin Productions featuring RAWDAWGS.",
+    picture:"images/SMCITYMANILA.jpg",
+    link:"https://www.google.com/maps/place/SM+City+Manila/@14.590256,120.9811942,17z/data=!3m1!4b1!4m6!3m5!1s0x3397cb209479aa11:0x872db4487b1bb367!8m2!3d14.5902508!4d120.9837691!16s%2Fg%2F11g0j06dbq?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
+  }
+
+
+];
+
+
+let currentIndex = 0;
+
+function updateLoc(){
+  const locs = loc[currentIndex];
+  document.getElementById("loc-image").src = locs.picture;
+  document.getElementById("loc-image").alt = `${locs.name} picture`;
+  document.getElementById("location-name").textContent = locs.name;
+  document.getElementById("location-deets").textContent = locs.details;
+  document.getElementById("location-link").href = locs.link;
+
+
+  loc1Icon.classList.toggle('active', currentIndex === 0);
+  loc2Icon.classList.toggle('active', currentIndex === 1);
+}
+
+function nextLoc(e) {
+  e.preventDefault();
+  currentIndex = (currentIndex + 1) % loc.length;
+  updateLoc(); 
+}
+
+
+
+window.onload = () =>{
+  loc1Icon.classList.add('active');
+
+  updateLoc();
+}
+
+
+
+// Update the seekbar maximum value once metadata is loaded
+video.addEventListener('loadedmetadata', () => {
+  seekbar.max = video.duration;
+});
+
+// Update seekbar position as the video plays
+video.addEventListener('timeupdate', () => {
+  seekbar.value = video.currentTime;
+});
+
+// When the user scrubs the seekbar, update the video current time
+seekbar.addEventListener('input', () => {
+  video.currentTime = seekbar.value;
+});
+
+
+// Play Pause
+// Toggle play/pause and update the button icon
+playPauseButton.addEventListener('click', () => {
+  if (video.paused || video.ended) {
+    video.play();
+    // Change icon to pause (using Unicode "||")
+    playPauseButton.innerHTML = '<span class="icon">&#10074;&#10074;</span>';
+  } else {
+    video.pause();
+    // Change icon back to play (using Unicode "►")
+    playPauseButton.innerHTML = '<span class="icon">&#9658;</span>';
+  }
+});
+
+
+video.addEventListener('pause', () => {
+  container.classList.add('paused');
+});
+video.addEventListener('play', () => {
+  container.classList.remove('paused');
+});
+
+
+
+
+
+
+
+    </script>
 
     </body>
 </html>
