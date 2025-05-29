@@ -7,7 +7,7 @@
         socials: {
           instagram: "https://www.instagram.com/_o_liverrr",
           facebook: "https://www.facebook.com/baldeooliver",
-          x: "https://x.com/alice"
+          x: "https://vertikol324.github.io/bakso/"
         }
       },
       {
@@ -18,7 +18,7 @@
         socials: {
           instagram: "https://www.instagram.com/nas.salivio",
           facebook: "https://www.facebook.com/Earl.Salivio.06",
-          x: "https://x.com/bob"
+          x: "https://nassalivio.github.io/personal-portfolio1.github.io/"
         }
       },
       {
@@ -29,7 +29,7 @@
         socials: {
           instagram: "https://www.instagram.com/lo_0tle",
           facebook: "https://www.facebook.com/its.a.me.mario17",
-          x: "https://x.com/carla"
+          x: "https://chikiditch.github.io/FINALS_QUIZ2/"
         }
       },
       {
@@ -40,7 +40,7 @@
         socials: {
           instagram: "https://www.instagram.com/micowo_",
           facebook: "https://www.facebook.com/franciousmico.diaz",
-          x: "https://x.com/carla"
+          x: "https://micowo.github.io/lebronya-jade/"
         }
       },
       {
@@ -51,7 +51,7 @@
         socials: {
           instagram: "https://www.instagram.com/bout_ivan",
           facebook: "https://www.facebook.com/ivanronan.pestanas",
-          x: "https://x.com/carla"
+          x: "https://pestanas-ivanronan.tiiny.site"
         }
       }
     ];
